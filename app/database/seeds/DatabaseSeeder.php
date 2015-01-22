@@ -9,10 +9,9 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		$user = new User();
-        $user->email = "chaow.po@up.ac.th";
-        $user->password = Hash::make("1234");
-        $user->save();
+		Eloquent::unguard();
+
+		// $this->call('UserTableSeeder');
 	}
 
 }

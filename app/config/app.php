@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => True,
+	'debug' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'k05OfFzS6j3HXqYMbvEwq1sPEp5bgBhi',
+	'key' => 'LTlQeWBzI6lMRPmONUR5ey1cj1xP9PP4',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -121,8 +121,6 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-        'Vinelab\NeoEloquent\NeoEloquentServiceProvider',
-        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
 	),
 

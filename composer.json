@@ -5,16 +5,12 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*",
-		"vinelab/neoeloquent": "~1.0",
-		"barryvdh/laravel-ide-helper": "~1.11"
+		"laravel/framework": "4.2.*"
 	},
 	"autoload": {
 		"classmap": [
 			"app/commands",
 			"app/controllers",
-            "app/controllers/apis",
-            "app/controllers/m1_api",
 			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",

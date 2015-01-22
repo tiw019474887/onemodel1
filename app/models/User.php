@@ -4,45 +4,23 @@ use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
-use Vinelab\NeoEloquent\Eloquent\SoftDeletingTrait;
 
-class User extends NeoEloquent implements UserInterface, RemindableInterface {
+class User extends Eloquent implements UserInterface, RemindableInterface {
 
-	use UserTrait, RemindableTrait, SoftDeletingTrait;
+	use UserTrait, RemindableTrait;
 
-    protected  $label = ['User'];
+	/**
+	 * The database table used by the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'users';
 
-    protected $fillable = ['email','title','firstname','lastname'];
-
-
-    public function getName(){
-        return "$this->title $this->firstname $this->lastname";
-    }
-
-    public function getAuthIdentifier()
-    {
-        return $this->id;
-    }
-
-    public function getAuthPassword()
-    {
-        return $this->password;
-    }
-
-    public function profileImage(){
-        return $this->hasOne('Photo','PROFILEPHOTO');
-    }
-
-    public function news(){
-        return $this->hasMany('News',"CREATE");
-    }
-
-    public static  function isUniqueEmail($email){
-        $user = User::where('email','=',$email)->first();
-        if ($user){
-            return false;
-        }
-        return true;
-    }
+	/**
+	 * The attributes excluded from the model's JSON form.
+	 *
+	 * @var array
+	 */
+	protected $hidden = array('password', 'remember_token');
 
 }
